@@ -3,7 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="_pwebjava.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 50) {
+                $(".navigationContainer").addClass("navShadow");
+            } else {
+                $(".navigationContainer").removeClass("navShadow");
+            }
+        });
+    </script>
 
     <title>Jess Nguyen</title>
     <style>
@@ -33,7 +44,6 @@
             animation: fadeInAnimation ease 3s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
-            padding-top: 150px;
             margin: 0px;
         }
 
@@ -48,6 +58,7 @@
         }
 
         .aboutContainer {
+            padding-top: 200px;
             align-items: center;
             padding-left: 300px;
             padding-right: 300px;
@@ -75,6 +86,7 @@
         }
 
         .blogContainer {
+            padding-top: 100px;
             align-items: center;
             padding-left: 300px;
             padding-right: 300px;
@@ -91,6 +103,7 @@
         }
 
         .contactContainer {
+            padding-top: 100px;
             padding-left: 300px;
             padding-right: 300px;
         }
@@ -116,11 +129,17 @@
             display: flex;
             font-family: 'julius_sans_oneregular';
             font-weight: bold;
-            height: 75px;
+            height: 150px;
             justify-content: center;
             position: fixed;
             top: 0;
             width: 100%;
+            transition: 0.3s;
+        }
+
+        .navShadow {
+            height: 85px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px;
         }
 
         .navItem {
@@ -167,8 +186,7 @@
             padding: 0 20px 5px;
         }
 
-        .subParagraph {
-        }
+        .subParagraph {}
 
         #aboutParagraph {
             padding: 20px 20px;
@@ -221,7 +239,7 @@
         }
 
         #contactSubmit:hover {
-            background-color:thistle;
+            background-color: thistle;
         }
 
         #name {
