@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="_pwebjava.js"></script>
+
     <title>Jess Nguyen</title>
     <style>
         @font-face {
@@ -24,6 +25,7 @@
         }
 
         * {
+            font-family: 'julius_sans_oneregular';
             scroll-behavior: smooth;
         }
 
@@ -31,91 +33,94 @@
             animation: fadeInAnimation ease 3s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
+            padding-top: 150px;
             margin: 0px;
         }
 
         footer {
-            text-align: right;
+            text-align: center;
         }
 
-        .box-1 {
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .aboutContainer {
             align-items: center;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .aboutHead {
+            display: flex;
+        }
+
+        .aboutBody {
             display: flex;
             justify-content: center;
+            align-items: center;
+        }
+
+        .blogHead {
+            display: flex;
+        }
+
+        .blogBody {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blogContainer {
+            align-items: center;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .blogBox {
+            background-color: white;
+            border: 1px solid black;
+            height: 275px;
+            width: 275px;
+            max-height: 275px;
+            max-width: 275px;
+            margin: 25px;
+        }
+
+        .contactContainer {
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .contactHead {
+            display: flex;
+        }
+
+        .contactBody {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px #00000010;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            max-width: 500px;
+            padding: 30px;
+        }
+
+        .navigationContainer {
+            align-items: center;
+            background-color: white;
+            display: flex;
             font-family: 'julius_sans_oneregular';
             font-weight: bold;
-        }
-
-        .box-2 {
-            margin-top: 50px;
-            margin-left: 250px;
-            margin-right: 250px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .box-3 {
-            display: flex;
-            margin: 0px 500px;
-            text-align: center;
-        }
-
-        .box-4 {
-            margin: 50px 500px;
-            text-align: center;
-        }
-
-        .box-5 {
-            margin: 50px 500px;
-            text-align: center;
-        }
-
-        .box-6 {
-            margin: 50px 500px;
-            text-align: center;
-        }
-
-        .container-1 {
-            padding: 0px 0px;
-        }
-
-        .container-2 {
-            position: relative;
-            background-image: url("Images/wp4674097-elden-ring-wallpapers.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            height: 740px;
-            padding: 25px 0px;
-            transition: 1.5s;
-        }
-
-        /* .container-2:hover {
-            background-image: url("Images/bg2.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        } */
-
-        .container-3 {
-            display: block;
-            background-color: lightgray;
-            padding: 25px 0px;
-        }
-
-        .container-4 {
-            background-color: lightgray;
-            padding: 25px 0px;
-        }
-
-        .container-5 {
-            background-color: lightgray;
-            padding: 25px 0px;
-        }
-
-        .container-6 {
-            background-color: lightgray;
-            padding: 25px 0px;
+            height: 75px;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
 
         .navItem {
@@ -138,50 +143,6 @@
             opacity: 0.85;
         }
 
-        .projectContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 50px 400px;
-        }
-
-        .projectBox {
-            border: 1px solid black;
-            height: 250px;
-            flex: 0 32%;
-            margin-bottom: 60px;
-        }
-
-        .blogContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 50px 400px;
-        }
-
-        .blogBox {
-            border: 1px solid black;
-            height: 250px;
-            flex: 0 32%;
-            margin-bottom: 60px;
-        }
-
-        .subHeader {
-            display: inline-block;
-            border-bottom: 2px solid teal;
-            color: teal;
-            font-family: 'julius_sans_oneregular';
-            font-size: 32px;
-            font-weight: bold;
-            margin: auto;
-            padding: 0 20px 5px;
-        }
-
-        .subParagraph {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            text-align: center;
-        }
-
         .socialItem {
             display: inline-block;
         }
@@ -195,131 +156,126 @@
             opacity: 0.6;
         }
 
-        /* Next & previous buttons */
-        .prev,
-        .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 8px;
-            color: white;
-            font-weight: bolder;
-            font-size: 26px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
+        .subHeader {
+            display: inline-block;
+            border-bottom: 2px solid black;
+            color: black;
+            font-family: 'julius_sans_oneregular';
+            font-size: 32px;
+            font-weight: bold;
+            margin: auto;
+            padding: 0 20px 5px;
         }
 
-        .prev {
-            left: 35px;
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* Position the "next button" to the right */
-        .next {
-            right: 50px;
-            border-radius: 3px 0 0 3px;
-        }
-
-        #aboutHead {}
-
-        #aboutPhoto {
-            padding: 20px 20px;
-            overflow: hidden;
+        .subParagraph {
         }
 
         #aboutParagraph {
-            text-align: left;
             padding: 20px 20px;
+            text-align: left;
         }
 
-        #leftHead {
+        #aboutPhoto {
+            border-radius: 50%;
+            width: auto;
+            height: 200px;
+            padding: 20px 20px;
+            overflow: hidden;
+        }
+
+        #contactName,
+        #contactEmail,
+        #contactSubject {
+            width: 85%;
+            padding: 5px;
+            border: 1px solid gray;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-left: 6%;
+        }
+
+        #contactMessage {
+            width: 85%;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid gray;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 6%;
+            resize: vertical;
+        }
+
+        #contactSubmit {
+            background-color: teal;
+            font-size: 20px;
+            width: 85%;
+            margin: auto;
+            border: none;
+            outline: none;
+            padding: 15px;
+            margin-left: 7.5%;
+            border-radius: 8px;
+            color: black;
+            cursor: pointer;
+            transition: .5s background-color;
+        }
+
+        #contactSubmit:hover {
+            background-color:thistle;
+        }
+
+        #name {
             flex-shrink: 2;
-            font-size: 36px;
+            font-size: 32px;
         }
 
-        #navigation {
+        #navBar {
             flex-shrink: 1;
             font-size: 18px;
             list-style-type: none;
+            margin-left: 350px;
             overflow: hidden;
-            margin-left: 400px;
-        }
-
-        #social {
-            display: inline-block;
-            flex-shrink: 2;
-            list-style-type: none;
         }
     </style>
 </head>
 
 <body>
-    <div class="container-1">
-        <div class="box-1">
-            <h3 id="leftHead">Jess<br>Nguyen</h3>
-            <ul id="navigation">
-                <li class="navItem"><a href="#about" class="navLink">About</a></li>
-                <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
-                <li class="navItem"><a href="#blog" class="navLink">Blog</a></li>
-                <li class="navItem"><a href="#contact" class="navLink">Contact</a></li>
-            </ul>
-            <ul id="social">
-                <li class="socialItem"><a class="socialLink" href="https://github.com/jess-ngu" target="_blank"><img
-                            class="socialImage" src="Images/GitHub-Mark/PNG/GitHub-Mark-32px.png" /></a></li>
-                <li class="socialItem"><a href="#" class="socialLink"><img class="socialImage"
-                            src="Images/linked_icon.png" /></a></li>
-            </ul>
-        </div>
+    <div class="navigationContainer">
+        <h3 id="name">Jess<br>  Nguyen</h3>
+        <ul id="navBar">
+            <li class="navItem"><a href="#about" class="navLink">About</a></li>
+            <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
+            <li class="navItem"><a href="#blog" class="navLink">Blog</a></li>
+            <li class="navItem"><a href="#contact" class="navLink">Contact</a></li>
+        </ul>
+        <ul id="socialBar">
+            <li class="socialItem"><a class="socialLink" href="https://github.com/jess-ngu" target="_blank"><img
+                        class="socialImage" src="Images/GitHub-Mark/PNG/GitHub-Mark-32px.png" /></a></li>
+            <li class="socialItem"><a href="#" class="socialLink"><img class="socialImage"
+                        src="Images/linked_icon.png" /></a></li>
+        </ul>
     </div>
 
-    <div class="container-2">
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <div class="container-3" id="about">
-        <div class="box-2">
+    <div class="aboutContainer" id="about">
+        <div class="aboutHead">
             <h3 class="subHeader" id="aboutHead">About</h3>
         </div>
-        <div class="box-3">
-            <img id="aboutPhoto"
-                src="https://external-preview.redd.it/PS_SickUtxfgdxALFd0gYQn9GSlNtVUqbDHwQgu6Yx0.jpg?auto=webp&s=72ba4d71adf9dcc06c177904aabc278f2d904866" />
+        <div class="aboutBody">
+            <img src="Images/me.jpg" id="aboutPhoto" />
             <p class="subParagraph" id="aboutParagraph">helllo me jess i am 3 year softwre enginer studnt at sheridan
                 coolege.
-                <br><br>My personal interests include fitness, foreign policy analysis, philosophy, and doing ur mom.
+                <br><br>My personal interests include fitness and doing ur mom.
                 <br><br>HTML CSS JavaScript Java Python C++ PHP MySQL
-                <br><br> NetBeans Visual Studio Code Windows Linux Kali Linux Wireshark
+                <br><br>NetBeans Visual Studio Code Windows Linux Kali Linux Wireshark
             </p>
         </div>
     </div>
 
-    <div class="container-4" id="projects">
-        <div class="box-4">
-            <h3 class="subHeader">Projects</h3>
-        </div>
-        <div class="projectContainer">
-            <div class="projectBox">
-            </div>
-            <div class="projectBox">
-            </div>
-            <div class="projectBox">
-            </div>
-            <div class="projectBox">
-            </div>
-            <div class="projectBox">
-            </div>
-            <div class="projectBox">
-            </div>
-        </div>
-    </div>
-
-    <div class="container-5" id="blog">
-        <div class="box-5">
+    <div class="blogContainer" id="blog">
+        <div class="blogHead">
             <h3 class="subHeader">Blog</h3>
         </div>
-        <div class="blogContainer">
+        <div class="blogBody">
             <div class="blogBox">
             </div>
             <div class="blogBox">
@@ -335,39 +291,22 @@
         </div>
     </div>
 
-    <div class="container-6">
-        <div class="box-6">
-            <h3 class="subHeader" id="contact">Contact</h3>
-            <p class="subParagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fringilla, eros et
-                finibus convallis, urna risus dapibus turpis, a maximus eros risus iaculis massa. Etiam scelerisque,
-                orci quis finibus porta, nisl ligula porttitor nisl, sed pellentesque metus turpis sed ante. Vestibulum
-                accumsan diam magna, vitae finibus lorem pretium in. Nullam id ex sit amet nibh volutpat ullamcorper at
-                at felis. Aliquam ut velit tincidunt, pretium elit eget, pharetra urna. Morbi magna elit, maximus
-                interdum risus eget, vestibulum sodales ipsum. Suspendisse consectetur dictum felis, nec fringilla magna
-                iaculis quis. Phasellus et ligula faucibus ligula tincidunt viverra. Donec egestas vel eros sit amet
-                pellentesque. Maecenas arcu tortor, suscipit at nulla gravida, elementum eleifend est.
-                Suspendisse potenti. Quisque id luctus mauris. Donec id lobortis turpis. In sed viverra quam, ut laoreet
-                tortor. Sed tincidunt nisl eu feugiat varius. Praesent a eros elit. Phasellus vehicula pellentesque
-                lacus, vel venenatis ex elementum id. Donec eu elit nec arcu commodo viverra ac a massa. Vestibulum
-                convallis mattis enim, sit amet dapibus felis elementum sit amet. Donec ullamcorper congue molestie.
-                Aenean vitae lorem semper, aliquam neque sit amet, dapibus risus.
-                Phasellus condimentum imperdiet ex, vel interdum nunc eleifend at. Maecenas interdum lacus velit, a
-                convallis lectus auctor a. Nunc gravida consectetur justo. Quisque sed sem ut orci aliquam dictum. Proin
-                ligula ex, hendrerit a quam nec, mollis pharetra eros. Maecenas tempor semper velit nec bibendum. Class
-                aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus
-                orci non massa sollicitudin, non feugiat eros varius. Donec mi dolor, dignissim nec iaculis id, congue
-                quis massa. Aliquam volutpat malesuada odio. Nulla faucibus justo lorem, nec blandit tortor lacinia vel.
-                Donec porta felis vel vestibulum vestibulum. Suspendisse potenti. Aenean ut vehicula ex, et ornare diam.
-                Mauris tincidunt at nunc sed ultrices. Suspendisse vel ex sollicitudin, auctor lectus nec, viverra
-                tortor. Morbi suscipit lectus vitae suscipit pharetra. Proin id ipsum mi. Sed viverra, dui at molestie
-                mollis, lectus est sodales diam, ac luctus tortor felis ut mauris. Aliquam erat volutpat. Sed eu rhoncus
-                mi. Mauris egestas, lacus eu mattis lacinia, leo lectus sodales magna, a iaculis lectus neque ac ante.
-                Suspendisse orci sapien, tristique a nisi in, imperdiet feugiat mi. Proin pellentesque sapien
-                sollicitudin augue faucibus dictum. Cras placerat tortor ut malesuada egestas. Nam laoreet, tellus non
-                suscipit porta, turpis turpis convallis turpis, a rutrum augue urna at erat. Nam id vulputate leo.
-                Curabitur vel odio diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus suscipit
-                a justo in dictum. Sed et velit metus. Ut tellus nisi, congue at leo nec, iaculis accumsan est. Donec at
-                cursus quam, sit amet dictum risus.</p>
+    <div class="contactContainer">
+        <div class="contactHead">
+            <h3 class="subHeader" id="contact">Contact Me!</h3>
+        </div>
+        <div class="contactBody">
+            <form id="contactForm" method="POST">
+                <label>Full Name</label>
+                <input id="contactName" type="text" placeholder="Name" />
+                <label>Email Address</label>
+                <input id="contactEmail" type="text" placeholder="Email" />
+                <label>Subject</label>
+                <input id="contactSubject" type="text" placeholder="Subject" />
+                <label>Message</label>
+                <textarea id="contactMessage" placeholder="Your message"></textarea>
+                <input id="contactSubmit" type="submit" value="Send" />
+            </form>
         </div>
     </div>
 </body>
