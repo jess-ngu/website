@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 50) {
+                $(".navigationContainer").addClass("navShadow");
+            } else {
+                $(".navigationContainer").removeClass("navShadow");
+            }
+        });
+    </script>
+
+    <title>Jess Nguyen</title>
+    <style>
+        @font-face {
+            font-family: 'julius_sans_oneregular';
+            src: url('juliussansone-regular-webfont.woff2') format('woff2'), url('juliussansone-regular-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        * {
+            font-family: 'julius_sans_oneregular';
+            scroll-behavior: smooth;
+        }
+
+        body {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            margin: 0px;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .aboutContainer {
+            padding-top: 200px;
+            align-items: center;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .aboutHead {
+            display: flex;
+        }
+
+        .aboutBody {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blogHead {
+            display: flex;
+        }
+
+        .blogBody {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blogContainer {
+            padding-top: 100px;
+            align-items: center;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .blogBox {
+            background-color: white;
+            border: 1px solid black;
+            height: 275px;
+            width: 275px;
+            max-height: 275px;
+            max-width: 275px;
+            margin: 25px;
+        }
+
+        .contactContainer {
+            padding-top: 100px;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .contactHead {
+            display: flex;
+        }
+
+        .contactBody {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px #00000010;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            max-width: 500px;
+            padding: 30px;
+        }
+
+        .navigationContainer {
+            align-items: center;
+            background-color: white;
+            display: flex;
+            font-family: 'julius_sans_oneregular';
+            font-weight: bold;
+            height: 150px;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .navShadow {
+            height: 85px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px;
+        }
+
+        .navItem {
+            display: inline;
+            float: left;
+            padding: 15px 25px;
+        }
+
+        .navLink {
+            border-bottom: 1px solid transparent;
+            color: black;
+            text-decoration: none;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .navLink:hover {
+            border-color: red;
+            color: RED;
+            opacity: 0.85;
+        }
+
+        .socialItem {
+            display: inline-block;
+        }
+
+        .socialImage {
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .socialImage:hover {
+            opacity: 0.6;
+        }
+
+        .subHeader {
+            display: inline-block;
+            border-bottom: 2px solid black;
+            color: black;
+            font-family: 'julius_sans_oneregular';
+            font-size: 32px;
+            font-weight: bold;
+            margin: auto;
+            padding: 0 20px 5px;
+        }
+
+        .subParagraph {}
+
+        #aboutParagraph {
+            padding: 20px 20px;
+            text-align: left;
+        }
+
+        #aboutPhoto {
+            border-radius: 50%;
+            width: auto;
+            height: 200px;
+            padding: 20px 20px;
+            overflow: hidden;
+        }
+
+        #contactName,
+        #contactEmail,
+        #contactSubject {
+            width: 85%;
+            padding: 5px;
+            border: 1px solid gray;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-left: 6%;
+        }
+
+        #contactMessage {
+            width: 85%;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid gray;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 6%;
+            resize: vertical;
+        }
+
+        #contactSubmit {
+            background-color: teal;
+            font-size: 20px;
+            width: 85%;
+            margin: auto;
+            border: none;
+            outline: none;
+            padding: 15px;
+            margin-left: 7.5%;
+            border-radius: 8px;
+            color: black;
+            cursor: pointer;
+            transition: .5s background-color;
+        }
+
+        #contactSubmit:hover {
+            background-color: thistle;
+        }
+
+        #name {
+            flex-shrink: 2;
+            font-size: 32px;
+        }
+
+        #navBar {
+            flex-shrink: 1;
+            font-size: 18px;
+            list-style-type: none;
+            margin-left: 350px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigationContainer">
+        <h3 id="name">Jess<br>  Nguyen</h3>
+        <ul id="navBar">
+            <li class="navItem"><a href="#about" class="navLink">About</a></li>
+            <li class="navItem"><a href="#projects" class="navLink">Projects</a></li>
+            <li class="navItem"><a href="#blog" class="navLink">Blog</a></li>
+            <li class="navItem"><a href="#contact" class="navLink">Contact</a></li>
+        </ul>
+        <ul id="socialBar">
+            <li class="socialItem"><a class="socialLink" href="https://github.com/jess-ngu" target="_blank"><img
+                        class="socialImage" src="Images/GitHub-Mark/PNG/GitHub-Mark-32px.png" /></a></li>
+            <li class="socialItem"><a href="#" class="socialLink"><img class="socialImage"
+                        src="Images/linked_icon.png" /></a></li>
+        </ul>
+    </div>
+
+    <div class="aboutContainer" id="about">
+        <div class="aboutHead">
+            <h3 class="subHeader" id="aboutHead">About</h3>
+        </div>
+        <div class="aboutBody">
+            <img src="Images/me.jpg" id="aboutPhoto" />
+            <p class="subParagraph" id="aboutParagraph">helllo me jess i am 3 year softwre enginer studnt at sheridan
+                coolege.
+                <br><br>My personal interests include fitness and doing ur mom.
+                <br><br>HTML CSS JavaScript Java Python C++ PHP MySQL
+                <br><br>NetBeans Visual Studio Code Windows Linux Kali Linux Wireshark
+            </p>
+        </div>
+    </div>
+
+    <div class="blogContainer" id="blog">
+        <div class="blogHead">
+            <h3 class="subHeader">Blog</h3>
+        </div>
+        <div class="blogBody">
+            <div class="blogBox">
+            </div>
+            <div class="blogBox">
+            </div>
+            <div class="blogBox">
+            </div>
+            <div class="blogBox">
+            </div>
+            <div class="blogBox">
+            </div>
+            <div class="blogBox">
+            </div>
+        </div>
+    </div>
+
+    <div class="contactContainer">
+        <div class="contactHead">
+            <h3 class="subHeader" id="contact">Contact Me!</h3>
+        </div>
+        <div class="contactBody">
+            <form id="contactForm" method="POST">
+                <label>Full Name</label>
+                <input id="contactName" type="text" placeholder="Name" />
+                <label>Email Address</label>
+                <input id="contactEmail" type="text" placeholder="Email" />
+                <label>Subject</label>
+                <input id="contactSubject" type="text" placeholder="Subject" />
+                <label>Message</label>
+                <textarea id="contactMessage" placeholder="Your message"></textarea>
+                <input id="contactSubmit" type="submit" value="Send" />
+            </form>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <p>&copy; Jess 2021</p>
+</footer>
+
+</html>
